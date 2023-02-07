@@ -1,0 +1,123 @@
+<MainScreen>:
+    name: 'main'
+    FloatLayout:
+        size_hint: None, None
+    ##################
+	##### BUTTONS ####
+    ##################
+        # Quit button
+        DPEAButton:
+            text: 'X'
+            font_size: 23
+            size_hint: None, None
+            size: root.width * 0.015, root.width * 0.015
+            x: root.width * 0.965
+            y: root.height * 0.945
+            background_color: 0.7, 0.7, 0.7, 1
+            on_press: root.resetCradles()
+            on_release: root.quit()
+
+
+    #############
+    ####BALLS####
+    #############
+        DPEAButton:
+            size: 200, 200
+            center_x: root.width * 0.9
+            y: root.height * 0.45
+            background_color: 0,0,0,0
+            on_press: root.grabFirstBallRight()
+            on_release: root.child_proof()
+
+            Image:
+                source: 'ballimage.jpeg'
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+                size: self.parent.size
+
+        DPEAButton:
+            size: 200, 200
+            center_x: root.width * 0.7
+            y: root.height * 0.45
+            background_color: 0,0,0,0
+            on_press: root.grabSecondBallRight()
+            on_release: root.child_proof()
+
+            Image:
+                source: 'ballimage.jpeg'
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+                size: self.parent.size
+
+        DPEAButton:
+            size: 200, 200
+            center_x: root.width * 0.5
+            y: root.height * 0.45
+            background_color: 0,0,0,0
+            on_press: root.grabThirdBallRight()
+            on_release: root.child_proof()
+
+            Image:
+                source: 'ballimage.jpeg'
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+                size: self.parent.size
+
+        DPEAButton:
+            size: 200, 200
+            center_x: root.width * 0.3
+            y: root.height * 0.45
+            background_color: 0,0,0,0
+            on_press: root.grabSecondBallLeft()
+            on_release: root.child_proof()
+
+            Image:
+                source: 'ballimage.jpeg'
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+                size: self.parent.size
+
+        DPEAButton:
+            size: 200, 200
+            center_x: root.width * 0.1
+            y: root.height * 0.45
+            background_color: 0,0,0,0
+            on_press: root.grabFirstBallLeft()
+            on_release: root.child_proof()
+
+            Image:
+                source: 'ballimage.jpeg'
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+                size: self.parent.size
+
+        DPEAButton:
+            id: gtbr
+            color: .33, .34, .34, 1  # silver
+            text: "Stop Balls"
+            font_size: 60
+            center_x: root.width * 0.5
+            y: root.height * 0.1
+            background_color: 1, 0, 0, 0
+            background_normal: ''
+            size_hint: None,None
+            size: 1000,200
+            on_press: root.stopBallMovement()
+            on_release: root.child_proof()
+
+        ############
+        ###LABELS###
+        ############
+
+        Label:
+            id: label1
+            font_size: 65
+            center_x: root.width * 0.5
+            y: root.height * 0.8
+            color: .33, .34, .34, 1
+            text: "PICK A BALL"
+
+<SecondWindow>:
+    name: 'second'
+    FloatLayout:
+        size_hint: None, None
